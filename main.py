@@ -36,6 +36,7 @@ def main():
             if event.type == pygame.QUIT:
                 return
         updatable.update(dt)
+        player.cooldown -= dt
         for asteroid in asteroids:
             if asteroid.collides_with(player):
                 log_event("player_hit")
